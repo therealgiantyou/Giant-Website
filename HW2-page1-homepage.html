@@ -1,0 +1,144 @@
+<!-- 
+•設計一個純HTML5+CSS網頁的網站。網站至少包括圖片、超連結、表格等多媒體內容。
+網站內容可包括個人資料、提供的網路資訊服務等項目。
+(Design a Pure HTML5 Website. The Website should include images, hyperlinks,
+tables, and any form of multimedia contents.) At least 4 pages
+
+•At least one page with SVG or <canvas> scalar graphics
+
+•One page show your resume.xml (or name card in HW1)
+
+•Use WCAG 2.1 Web Accessible Design (at least 3 items)
+
+•Please use RWD for laptop and mobile devices
+
+•Give a report (.docx) to discuss your design
+
+•Note: You can use web space from W3Schools 
+-->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Giant You"/>
+        <meta name="description" content="A web page about Giant You."/> 
+        <meta name="keyword" content="Giant You, giant you, Giant, giant"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <title>Giant's Homepage</title>
+        <link rel="icon" href="icon-g.png"/>
+        <link rel="stylesheet" type="text/css" href="HW2.css"/> 
+    </head>
+
+    <body>
+        <header>
+            <h1>Welcome to Giant's Website</h1>
+        </header>
+    
+        <!-- Navigation Bar(PC) -->
+        <nav class="PC-nav">
+            <a href="HW2-page1-homepage.html">Home</a>
+            <a href="HW2-page2-photovideo.html">Photo & Video</a>
+            <a href="HW2-page3-resume.html">Resume</a>
+            <a href="HW2-page4-svgcanvas.html">SVG & Canvas</a>
+        </nav>
+
+        <!-- Navigation Bar(Phone) -->
+        <div class="menu-icon">
+            <img src="menu-icon.png" alt="menu icon" width="20px" style="padding-top: 10px; padding-left: 10px;">
+        </div>
+        <nav class="phone-nav">
+                <a href="HW2-page1-homepage.html">Home</a>
+                <a href="HW2-page2-photovideo.html">Photo & Video</a>
+                <a href="HW2-page3-resume.html">Resume</a>
+                <a href="HW2-page4-svgcanvas.html">SVG & Canvas</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <!-- About Me -->
+            <section id="about">
+                <h2>About Me</h2>
+                <div><img src="大頭照.jpg" alt="A picture of Giant You." title="I'm Giant." class="mySelfie"></div>
+                <br>
+                <div>
+                    Hi, I'm Giant You, currently a graduate student in the Department of Computer Science and Information Engineering at National Taiwan Normal University.
+                    I am someone who is willing to embrace "change" and enjoys exploring diverse fields and interacting with people from different backgrounds.
+                </div>
+                <br>
+                <div>    
+                    I have participated in the "IoT Applications Talent Cultivation Program" offered by the Industrial Technology Research Institute, which sparked my interest in 
+                    image recognition and artificial intelligence. Since then, I have been self-learning knowledge related to computer science and engineering, aspiring to 
+                    become a bridge between humans and AI.
+                </div>
+                <br>  
+            </section>
+
+            <hr>
+
+            <!-- Portfolio -->
+            <section id="portfolio">
+                <h2>Portfolio</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"CCU Pineapple Juice" Youtube Channel</td>
+                            <td>Edited 9 videos to promote stories of our campus and food stalls nearby.</td>
+                            <td><a href="https://www.youtube.com/@%E4%B8%AD%E6%AD%A3%E9%B3%B3%E6%A2%A8%E7%9F%A5" target="_blank">View Channel</a></td>
+                        </tr>
+                        <tr>
+                            <td>Optimized Department Web</td>
+                            <td>Redesigned the web page and updated other information</td>
+                            <td><a href="https://busadm.ccu.edu.tw/" target="_blank">View Project</a></td>
+                        </tr>
+                        <tr>
+                            <td>Gesture Recognition</td>
+                            <td>Design a simple gesture recognition program which can recognize numbers and NARUTO's ninjutsu gestures.</td>
+                            <td><a href="https://www.youtube.com/watch?v=wJAL-Y7Ni7s" target="_blank">View Project</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <hr>
+
+            <!-- Contact -->
+            <section id="contact">
+                <h2>Contact</h2>
+                <ul style="list-style-type: circle;"> 
+                    <li>Name：Giant You</li> 
+                    <li>Phone：0911-439-501</li>
+                    <li>E-mail：giant3467@gmail.com</li>
+                    <li>Address：No. 16, Aly. 2, Ln. 38, Xinhu Rd., Xinpu Township, Hsinchu County, Taiwan (R.O.C.)</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <!-- Other Website -->
+            <section id="favoriteweb">
+                <h2>Favorite Website</h2>
+                <ul>
+                    <li><a href="https://www.youtube.com/" target="_blank">Youtube</a></li>
+                    <li><a href="https://ani.gamer.com.tw/" target="_blank">Animation Crazy</a></li>
+                    <li><a href="https://www.uniqlo.com/" target="_blank">Uniqlo</a></li>
+                    <li><a href="https://shop.muji.tw/" target="_blank">Muji</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Giant's Webpage</p>
+        </footer>
+
+        <script src="HW2.js"></script>
+    </body>
+</html>

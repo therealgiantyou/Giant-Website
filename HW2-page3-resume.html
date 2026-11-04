@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Giant You"/>
+        <meta name="description" content="A web page about Giant You."/> 
+        <meta name="keyword" content="Giant You, giant you, Giant, giant"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <title>Giant's Resume</title>
+        <link rel="icon" href="icon-g.png"/>
+        <link rel="stylesheet" type="text/css" href="HW2.css"/> 
+    </head>
+    
+    <body>
+        <header>
+            <h1>Welcome to Giant's Website</h1>
+        </header>
+    
+        <!-- Navigation Bar(PC) -->
+        <nav class="PC-nav">
+            <a href="HW2-page1-homepage.html">Home</a>
+            <a href="HW2-page2-photovideo.html">Photo & Video</a>
+            <a href="HW2-page3-resume.html">Resume</a>
+            <a href="HW2-page4-svgcanvas.html">SVG & Canvas</a>
+        </nav>
+
+        <!-- Navigation Bar(Phone) -->
+        <div class="menu-icon">
+            <img src="menu-icon.png" alt="menu icon" width="20px" style="padding-top: 10px; padding-left: 10px;">
+        </div>
+        <nav class="phone-nav">
+                <a href="HW2-page1-homepage.html">Home</a>
+                <a href="HW2-page2-photovideo.html">Photo & Video</a>
+                <a href="HW2-page3-resume.html">Resume</a>
+                <a href="HW2-page4-svgcanvas.html">SVG & Canvas</a>
+        </nav>
+        
+        <!-- Main Content -->
+        <main>
+            <h2>Resume</h2>
+            <div id="xml-container"></div>
+            <a href="Resume 1 - Giant You.pdf" target="_blank">My Resume.pdf</a>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Giant's Webpage</p>
+        </footer>
+
+        <script src="HW2.js"></script>
+
+        <!-- Resume.xml -->
+        <script type="application/xml" id="embedded-xml">
+            <resume>
+                <name>Giant You</name>
+            
+                <contact>
+                    <linkedin>linkedin.com/in/giant3467/</linkedin>
+                    <email>giant3467@gmail.com</email>
+                    <phone>0911-439-501</phone>
+                </contact>
+            
+                <education>
+                    <master>National Taiwan Normal University (NTNU), Computer Science and Information Engineering</master>
+                    <bachelor>National Chung Cheng University (CCU), Business Adiministration</bachelor>
+                </education>
+            
+                <project>
+                    <project1>Established "CCU Pineapple Juice" Youtube Channel</project1>
+                    <project2>Optimized Department Web</project2>
+                </project>
+            
+                <otherExp>
+                    Member of Marketing Department
+                </otherExp>
+            
+                <extraAct>
+                    <act1>Jhudong Elementary School Education Winter Camp, Volunteer</act1>
+                    <act2>CCUBA Basketball Club, Leader</act2>
+                    <act3>HBL Semi-Finals, Volunteer</act3>
+                </extraAct>
+            
+                <skills>
+                    <technical>
+                        <programming>C++, Python, HTML, CSS</programming>
+                        <microsoftOffice>Word, PowerPoint, Excel</microsoftOffice>
+                    </technical>
+                    <language>Native speaker of Mandarin, familiar with English(TOEIC 915 / 990)</language>
+                </skills>
+            </resume>
+        </script>
+
+        <!-- 解析xml -->
+        <script>
+            // 從 <script> 標籤中獲取嵌入的 XML
+            const xmlScript = document.getElementById('embedded-xml').textContent;
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlScript, "application/xml");
+
+            // 檢查是否有解析錯誤
+            if (xmlDoc.getElementsByTagName("parsererror").length > 0) {
+                document.getElementById("xml-container").innerHTML = "XML 解析錯誤！";
+            } else {
+                const resume = xmlDoc.getElementsByTagName("resume")[0];
+                const name = resume.getElementsByTagName("name")[0].textContent;
+                const linkedin = resume.getElementsByTagName("linkedin")[0].textContent;
+                const email = resume.getElementsByTagName("email")[0].textContent;
+                const phone = resume.getElementsByTagName("phone")[0].textContent;
+                const bachelor = resume.getElementsByTagName("bachelor")[0].textContent;
+                const master = resume.getElementsByTagName("master")[0].textContent;
+                const project1 = resume.getElementsByTagName("project1")[0].textContent;
+                const project2 = resume.getElementsByTagName("project2")[0].textContent;
+                const otherExp = resume.getElementsByTagName("otherExp")[0].textContent;
+                const act1 = resume.getElementsByTagName("act1")[0].textContent;
+                const act2 = resume.getElementsByTagName("act2")[0].textContent;
+                const act3 = resume.getElementsByTagName("act3")[0].textContent;
+                const programming = resume.getElementsByTagName("programming")[0].textContent;
+                const microsoftOffice = resume.getElementsByTagName("microsoftOffice")[0].textContent;
+                const language = resume.getElementsByTagName("language")[0].textContent;
+
+                document.getElementById("xml-container").innerHTML = `
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <td>${name}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Contact</th>
+                            <td>
+                                <ul>
+                                    <li>Linkedin：${linkedin}</li>
+                                    <li>Email：${email}</li>
+                                    <li>Phone：${phone}</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Education</th>
+                            <td>
+                                <ul>
+                                    <li>Master：${master}</li>
+                                    <li>Bachelor：${bachelor}</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Project</th>
+                            <td>
+                                <ul>
+                                    <li>${project1}</li>
+                                    <li>${project2}</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Other Experience</th>
+                            <td>${otherExp}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Extracurricular Activity</th>
+                            <td>
+                                <ul>
+                                    <li>${act1}</li>
+                                    <li>${act2}</li>
+                                    <li>${act3}</li>
+                                </ul>    
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Skills</th>
+                            <td>
+                                <ul>
+                                    <li>Technical
+                                        <ul>
+                                            <li>Programming：${programming}</li> 
+                                            <li>Microsoft Office：${microsoftOffice}</li>  
+                                        </ul>    
+                                    </li>
+                                    <li>Language
+                                        <ul>
+                                            <li>${language}</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                `;
+            }
+        </script>
+    </body>
+</html>

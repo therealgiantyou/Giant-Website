@@ -1,0 +1,37 @@
+<resume>
+    <name>Giant You</name>
+
+    <contact>
+        <linkedin>linkedin.com/in/giant3467/</linkedin>
+        <email>giant3467@gmail.com</email>
+        <phone>0911-439-501</phone>
+    </contact>
+
+    <education>
+        <master>National Taiwan Normal University (NTNU), Computer Science and Information Engineering</master>
+        <bachelor>National Chung Cheng University (CCU), Business Adiministration</bachelor>
+    </education>
+
+    <project>
+        <project1>Established "CCU Pineapple Juice" Youtube Channel</project1>
+        <project2>Optimized Department Web</project2>
+    </project>
+
+    <otherExp>
+        Member of Marketing Department
+    </otherExp>
+
+    <extraAct>
+        <act1>Jhudong Elementary School Education Winter Camp, Volunteer</act1>
+        <act2>CCUBA Basketball Club, Leader</act2>
+        <act3>HBL Semi-Finals, Volunteer</act3>
+    </extraAct>
+
+    <skills>
+        <technical>
+            <programming>C++, Python, HTML, CSS</programming>
+            <microsoftOffice>Word,PowerPoint, Excel</microsoftOffice>
+        </technical>
+        <language>Native speaker of Mandarin, familiar with English(TOEIC 915 / 990)</language>
+    </skills>
+</resume>
